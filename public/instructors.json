@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "name": "Sarah Johnson",
+    "role": "Full-Stack Developer & Instructor",
+    "rating": 4.9,
+    "students": 12450,
+    "image": "https://randomuser.me/api/portraits/women/1.jpg",
+    "social": {
+      "linkedin": "#",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": 2,
+    "name": "David Chen",
+    "role": "UI/UX Design Expert",
+    "rating": 4.8,
+    "students": 9800,
+    "image": "https://randomuser.me/api/portraits/men/2.jpg",
+    "social": {
+      "linkedin": "#",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Emily Rodriguez",
+    "role": "Marketing & Business Strategist",
+    "rating": 4.9,
+    "students": 15200,
+    "image": "https://randomuser.me/api/portraits/women/3.jpg",
+    "social": {
+      "linkedin": "#",
+      "twitter": "#",
+      "github": "#"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Michael Okonkwo",
+    "role": "Data Science & AI Instructor",
+    "rating": 4.7,
+    "students": 8700,
+    "image": "https://randomuser.me/api/portraits/men/4.jpg",
+    "social": {
+      "linkedin": "#",
+      "twitter": "#",
+      "github": "#"
+    }
+  }
+]

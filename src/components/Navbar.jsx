@@ -10,13 +10,13 @@ const Navbar = () => {
     <nav className="bg-[#1a2438] border-b border-[#4a3d34] px-4 shadow-lg relative">
       <div className="flex justify-between items-center py-3 max-w-7xl mx-auto w-full">
         
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-5 items-center">
           <Image
             src={"/logo.png"}
             alt="SkillSphere Logo"
             loading="eager"
-            width={30}
-            height={30}
+            width={40}
+            height={40}
             className="object-cover h-auto w-auto"
           />
           <h3 className="font-black text-3xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-[#b79c8d] to-[#4a3d34]">

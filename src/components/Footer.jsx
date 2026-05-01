@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="relative mt-24">
+    <footer className="relative">
       <div className="mt-12 h-px w-full bg-gradient-to-r from-transparent via-[#4a3d34] to-transparent" />
 
       {/* Background Layer */}

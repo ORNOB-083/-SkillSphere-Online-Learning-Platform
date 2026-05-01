@@ -33,7 +33,6 @@ const LearningTips = () => {
     <section className="bg-[#333c4d] py-16 px-4">
       <div className="max-w-7xl mx-auto">
         
-        {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#b79c8d] mb-3 animate__animated animate__fadeInDown">
             📌 Learning Tips
@@ -43,14 +42,13 @@ const LearningTips = () => {
           </p>
         </div>
 
-        {/* Tips Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {tips.map((tip, index) => (
             <div
               key={index}
               className={`bg-[#4a3d34] p-6 rounded-xl shadow-lg border border-[#8b756c]/30 hover:border-[#b79c8d] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl animate__animated animate__fadeInUp animate__delay-${(index % 3) * 200}ms`}
               style={{
-                animationDelay: `${index * 100}ms`, // Staggered entrance
+                animationDelay: `${index * 100}ms`, 
                 animationDuration: "0.8s"
               }}
             >
