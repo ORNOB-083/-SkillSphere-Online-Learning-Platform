@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "title": "Complete Web Development Bootcamp",
+    "instructor": "John Doe",
+    "duration": "20 hours",
+    "rating": 4.8,
+    "level": "Beginner",
+    "description": "Learn full-stack web development from scratch. Master HTML, CSS, JavaScript, React, Node.js, and MongoDB.",
+    "image": "https://picsum.photos/seed/webdev/400/300",
+    "category": "Development"
+  },
+  {
+    "id": 2,
+    "title": "UI/UX Design Masterclass",
+    "instructor": "Sarah Johnson",
+    "duration": "15 hours",
+    "rating": 4.9,
+    "level": "Intermediate",
+    "description": "Learn the principles of user-centered design. Create wireframes, prototypes, and high-fidelity designs for web and mobile apps.",
+    "image": "https://picsum.photos/seed/design/400/300",
+    "category": "Design"
+  },
+  {
+    "id": 3,
+    "title": "Digital Marketing Strategy",
+    "instructor": "Emily Rodriguez",
+    "duration": "12 hours",
+    "rating": 4.7,
+    "level": "Beginner",
+    "description": "Learn SEO, social media marketing, email campaigns, and analytics. Build a complete digital marketing strategy for any business.",
+    "image": "https://picsum.photos/seed/marketing/400/300",
+    "category": "Marketing"
+  },
+  {
+    "id": 4,
+    "title": "Data Science with Python",
+    "instructor": "Michael Okonkwo",
+    "duration": "25 hours",
+    "rating": 4.8,
+    "level": "Advanced",
+    "description": "Master data analysis, visualization, and machine learning using Python, Pandas, NumPy, and Scikit-learn.",
+    "image": "https://picsum.photos/seed/datascience/400/300",
+    "category": "Data Science"
+  },
+  {
+    "id": 5,
+    "title": "Business Communication Skills",
+    "instructor": "David Chen",
+    "duration": "8 hours",
+    "rating": 4.6,
+    "level": "Beginner",
+    "description": "Improve your professional communication, presentation skills, and business writing. Perfect for career growth.",
+    "image": "https://picsum.photos/seed/business/400/300",
+    "category": "Business"
+  },
+  {
+    "id": 6,
+    "title": "Mobile App Development with React Native",
+    "instructor": "Sarah Johnson",
+    "duration": "18 hours",
+    "rating": 4.9,
+    "level": "Intermediate",
+    "description": "Build cross-platform mobile apps for iOS and Android using React Native. Deploy your first app to app stores.",
+    "image": "https://picsum.photos/seed/mobileapp/400/300",
+    "category": "Development"
+  }
+]

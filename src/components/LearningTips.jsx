@@ -32,10 +32,10 @@ const LearningTips = () => {
   return (
     <section className="bg-[#333c4d] py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        
+
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#b79c8d] mb-3 animate__animated animate__fadeInDown">
-            📌 Learning Tips
+          <h2 className="text-5xl md:text-4xl font-bold text-[#b79c8d] mb-3 animate__animated animate__fadeInDown">
+            Learning Tips
           </h2>
           <p className="text-[#8b756c] text-lg max-w-2xl mx-auto animate__animated animate__fadeInUp animate__delay-1s">
             Master your study habits with these proven techniques and time management strategies.
@@ -48,7 +48,7 @@ const LearningTips = () => {
               key={index}
               className={`bg-[#4a3d34] p-6 rounded-xl shadow-lg border border-[#8b756c]/30 hover:border-[#b79c8d] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl animate__animated animate__fadeInUp animate__delay-${(index % 3) * 200}ms`}
               style={{
-                animationDelay: `${index * 100}ms`, 
+                animationDelay: `${index * 100}ms`,
                 animationDuration: "0.8s"
               }}
             >

@@ -1,17 +1,15 @@
 import HeroSection from "@/components/HeroSection";
-import LearningTips from "@/components/LearningTips";
+import PopularCourses from "@/components/PopularCourses";
 import TopInstructors from "@/components/TopInstructors";
-
-import Image from "next/image";
+import LearningTips from "@/components/LearningTips";
 
 export default function Home() {
   return (
-    <div className="">
-      <HeroSection></HeroSection>
-      
-      <TopInstructors></TopInstructors>
-      <LearningTips></LearningTips>
-
+    <div>
+      <HeroSection />
+      <PopularCourses />
+      <TopInstructors />
+      <LearningTips />
     </div>
   );
 }
