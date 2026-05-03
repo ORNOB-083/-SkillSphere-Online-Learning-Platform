@@ -1,7 +1,7 @@
 import CourseCard from "./CourseCard";
 
 const PopularCourses = async () => {
-  const res = await fetch("http://localhost:3000/courses.json", {
+  const res = await fetch("https://skillsphere-online-earning-platform.vercel.app/courses.json", {
     cache: "no-store",
   });
 
