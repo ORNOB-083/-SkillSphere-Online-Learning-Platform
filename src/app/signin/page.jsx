@@ -37,7 +37,7 @@ export default function SignInPage() {
             console.log({ data, error });
 
             if (!error) {
-                toast.success("✅ Welcome back! Redirecting...");
+                toast.success("✅ Welcome back!");
             } else {
                 toast.error(error.message || "Login failed. Please check your credentials.");
             }

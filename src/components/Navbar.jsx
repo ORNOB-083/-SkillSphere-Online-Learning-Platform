@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { Avatar, Button } from "@heroui/react";
-import { toast } from "react-toastify"; // ✅ Add this import
+import { toast } from "react-toastify";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +26,7 @@ const Navbar = () => {
   const handleSignOut = async () => {
     await authClient.signOut();
     setUser(null);
-    toast.success("✅ Successfully signed out!"); // ✅ Toast notification
+    toast.success("✅ Successfully signed out!");
   };
 
   return (
@@ -166,6 +166,7 @@ const Navbar = () => {
             ) : (
               <li className="pt-2 border-t border-[#4a3d34]">
                 <button
+                  href={"/signin"}
                   onClick={handleSignOut}
                   className="w-full px-4 py-2 rounded text-sm font-medium border border-[#4a3d34] text-[#b79c8d] hover:bg-[#4a3d34] hover:text-white transition-colors"
                 >
