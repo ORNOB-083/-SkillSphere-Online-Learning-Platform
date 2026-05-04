@@ -7,7 +7,7 @@
     "rating": 4.8,
     "level": "Beginner",
     "description": "Learn full-stack web development from scratch. Master HTML, CSS, JavaScript, React, Node.js, and MongoDB.",
-    "image": "https://picsum.photos/seed/webdev/400/300",
+    "image": "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg",
     "category": "Development"
   },
   {
@@ -18,7 +18,7 @@
     "rating": 4.9,
     "level": "Intermediate",
     "description": "Learn the principles of user-centered design. Create wireframes, prototypes, and high-fidelity designs for web and mobile apps.",
-    "image": "https://picsum.photos/seed/design/400/300",
+    "image": "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg",
     "category": "Design"
   },
   {
@@ -29,7 +29,7 @@
     "rating": 4.7,
     "level": "Beginner",
     "description": "Learn SEO, social media marketing, email campaigns, and analytics. Build a complete digital marketing strategy for any business.",
-    "image": "https://picsum.photos/seed/marketing/400/300",
+    "image": "https://images.pexels.com/photos/905163/pexels-photo-905163.jpeg",
     "category": "Marketing"
   },
   {
@@ -40,7 +40,7 @@
     "rating": 4.8,
     "level": "Advanced",
     "description": "Master data analysis, visualization, and machine learning using Python, Pandas, NumPy, and Scikit-learn.",
-    "image": "https://picsum.photos/seed/datascience/400/300",
+    "image": "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
     "category": "Data Science"
   },
   {
@@ -51,7 +51,7 @@
     "rating": 4.6,
     "level": "Beginner",
     "description": "Improve your professional communication, presentation skills, and business writing. Perfect for career growth.",
-    "image": "https://picsum.photos/seed/business/400/300",
+    "image": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
     "category": "Business"
   },
   {
@@ -62,7 +62,7 @@
     "rating": 4.9,
     "level": "Intermediate",
     "description": "Build cross-platform mobile apps for iOS and Android using React Native. Deploy your first app to app stores.",
-    "image": "https://picsum.photos/seed/mobileapp/400/300",
+    "image": "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg",
     "category": "Development"
   }
 ]

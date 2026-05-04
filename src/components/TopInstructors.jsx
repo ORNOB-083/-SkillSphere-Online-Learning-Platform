@@ -1,4 +1,3 @@
-// src/components/TopInstructors.jsx
 "use client";
 
 import { useEffect, useState } from "react";

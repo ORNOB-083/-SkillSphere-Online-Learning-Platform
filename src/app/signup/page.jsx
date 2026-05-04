@@ -40,7 +40,7 @@ export default function SignUpPage() {
             console.log({ data, error });
 
             if (!error) {
-                toast.success("✅ Account created successfully! Redirecting...");
+                toast.success("✅ Account created successfully!");
                 router.push('/');
             } else {
                 toast.error(error.message || "Registration failed. Please try again.");
