@@ -13,13 +13,11 @@ export default function ProfilePage() {
   const [session, setSession] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Check if user is logged in
   useEffect(() => {
     const checkSession = async () => {
       try {
         const { data, error } = await authClient.getSession();
         if (error || !data) {
-          // If no session, redirect to login
           router.push('/signin');
           return;
         }
@@ -42,7 +40,7 @@ export default function ProfilePage() {
     );
   }
 
-  if (!session) return null; // Redirect already triggered
+  if (!session) return null;
 
   const user = session.user;
 
@@ -55,7 +53,6 @@ export default function ProfilePage() {
           </h1>
 
           <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
-            {/* Avatar */}
             <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-[#4a3d34]">
               {user.image ? (
                 <Image
@@ -71,7 +68,6 @@ export default function ProfilePage() {
               )}
             </div>
 
-            {/* User Info */}
             <div className="flex-1">
               <h2 className="text-2xl font-bold text-[#b79c8d]">
                 {user.name || "User"}
@@ -83,7 +79,6 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/profile/update" className="w-full">
               <Button className="w-full bg-[#4a3d34] text-[#b79c8d] hover:bg-[#8b756c]">

@@ -1,15 +1,38 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { authClient } from "@/lib/auth-client";
+import { Avatar, Button } from "@heroui/react";
+import { toast } from "react-toastify"; // ✅ Add this import
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const checkSession = async () => {
+      try {
+        const { data } = await authClient.getSession();
+        setUser(data?.user ?? null);
+      } catch (err) {
+        console.error("Session error:", err);
+        setUser(null);
+      }
+    };
+    checkSession();
+  }, []);
+
+  const handleSignOut = async () => {
+    await authClient.signOut();
+    setUser(null);
+    toast.success("✅ Successfully signed out!"); // ✅ Toast notification
+  };
 
   return (
     <nav className="bg-[#1a2438] border-b border-[#4a3d34] px-4 shadow-lg relative">
       <div className="flex justify-between items-center py-3 max-w-7xl mx-auto w-full">
-        
+
         <div className="flex gap-5 items-center">
           <Image
             src={"/logo.png"}
@@ -37,19 +60,36 @@ const Navbar = () => {
         </ul>
 
         <div className="hidden md:flex items-center gap-3">
-          <Link href={"/signin"}>
-            <button className="px-4 py-2 rounded text-sm font-medium border border-[#4a3d34] text-[#b79c8d] hover:bg-[#4a3d34] hover:text-white transition-colors">
-              Login
-            </button>
-          </Link>
-          <Link href={"/signup"}>
-            <button className="px-4 py-2 rounded text-sm font-medium bg-[#4a3d34] text-[#b79c8d] hover:bg-[#8b756c] hover:text-white transition-colors shadow-md">
-              Register
-            </button>
-          </Link>
+          {!user ? (
+            <>
+              <Link href={"/signin"}>
+                <button className="px-4 py-2 rounded text-sm font-medium border border-[#4a3d34] text-[#b79c8d] hover:bg-[#4a3d34] hover:text-white transition-colors">
+                  Login
+                </button>
+              </Link>
+              <Link href={"/signup"}>
+                <button className="px-4 py-2 rounded text-sm font-medium bg-[#4a3d34] text-[#b79c8d] hover:bg-[#8b756c] hover:text-white transition-colors shadow-md">
+                  Register
+                </button>
+              </Link>
+            </>
+          ) : (
+            <div className="flex items-center gap-3">
+              <Avatar size="sm">
+                <Avatar.Image
+                  alt={user?.name || "User"}
+                  src={user?.image}
+                  referrerPolicy="no-referrer"
+                />
+                <Avatar.Fallback>{user?.name?.charAt(0) || "U"}</Avatar.Fallback>
+              </Avatar>
+              <Button onClick={handleSignOut} size="sm" variant="danger" className="bg-[#4a3d34] border border-[#8b756c] text-[#b79c8d] hover:bg-[#8b756c] hover:text-white">
+                SignOut
+              </Button>
+            </div>
+          )}
         </div>
 
-        {/* HAMBURGER ICON (Mobile) */}
         <button
           className="md:hidden text-[#b79c8d] focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -79,7 +119,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* MOBILE MENU (Dropdown) */}
       {isMenuOpen && (
         <div className="md:hidden bg-[#1a2438] border-t border-[#4a3d34] py-4 px-4 absolute top-full left-0 w-full z-50">
           <ul className="flex flex-col gap-4 text-sm text-[#8b756c]">
@@ -110,18 +149,30 @@ const Navbar = () => {
                 My Profile
               </Link>
             </li>
-            <li className="flex flex-col gap-2 pt-2 border-t border-[#4a3d34]">
-              <Link href={"/signin"} onClick={() => setIsMenuOpen(false)}>
-                <button className="w-full px-4 py-2 rounded text-sm font-medium border border-[#4a3d34] text-[#b79c8d] hover:bg-[#4a3d34] hover:text-white transition-colors">
-                  Login
+
+            {!user ? (
+              <li className="flex flex-col gap-2 pt-2 border-t border-[#4a3d34]">
+                <Link href={"/signin"} onClick={() => setIsMenuOpen(false)}>
+                  <div className="w-full px-4 py-2 rounded text-sm font-medium border border-[#4a3d34] text-[#b79c8d] hover:bg-[#4a3d34] hover:text-white transition-colors">
+                    Login
+                  </div>
+                </Link>
+                <Link href={"/signup"} onClick={() => setIsMenuOpen(false)}>
+                  <div className="w-full px-4 py-2 rounded text-sm font-medium bg-[#4a3d34] text-[#b79c8d] hover:bg-[#8b756c] hover:text-white transition-colors shadow-md">
+                    Register
+                  </div>
+                </Link>
+              </li>
+            ) : (
+              <li className="pt-2 border-t border-[#4a3d34]">
+                <button
+                  onClick={handleSignOut}
+                  className="w-full px-4 py-2 rounded text-sm font-medium border border-[#4a3d34] text-[#b79c8d] hover:bg-[#4a3d34] hover:text-white transition-colors"
+                >
+                  SignOut
                 </button>
-              </Link>
-              <Link href={"/signup"} onClick={() => setIsMenuOpen(false)}>
-                <button className="w-full px-4 py-2 rounded text-sm font-medium bg-[#4a3d34] text-[#b79c8d] hover:bg-[#8b756c] hover:text-white transition-colors shadow-md">
-                  Register
-                </button>
-              </Link>
-            </li>
+              </li>
+            )}
           </ul>
         </div>
       )}

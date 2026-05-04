@@ -15,7 +15,7 @@ import {
 } from "@heroui/react";
 import { GrGoogle } from "react-icons/gr";
 import { authClient } from "@/lib/auth-client";
-
+import { toast } from "react-toastify";
 export default function SignInPage() {
     const router = useRouter();
 
@@ -27,22 +27,40 @@ export default function SignInPage() {
 
         console.log("Login attempt:", { email, password });
 
+        try {
+            const { data, error } = await authClient.signIn.email({
+                email,
+                password,
+                callbackURL: "/",
+            });
 
-        const { data, error } = await authClient.signIn.email({
-            email,
-            password,
-            callbackURL: "/"
-        })
+            console.log({ data, error });
 
-        console.log({ data, error })
+            if (!error) {
+                toast.success("✅ Welcome back! Redirecting...");
+            } else {
+                toast.error(error.message || "Login failed. Please check your credentials.");
+            }
+        } catch (err) {
+            console.error("Unexpected error:", err);
+            toast.error("Something went wrong. Please try again later.");
+        }
     };
 
     const handleGoogleSignIn = async () => {
-        console.log("Google sign in clicked");
+        try {
+            await authClient.signIn.social({
+                provider: "google",
+            });
+            toast.success("✅ Signed in with Google!");
+        } catch (err) {
+            console.error("Google sign-in error:", err);
+            toast.error("Google sign-in failed. Please try again.");
+        }
     };
 
     return (
-        <div className="min-h-screen bg-[#1a2438]  flex items-center justify-center py-10 px-4">
+        <div className="min-h-screen bg-[#1a2438] flex items-center justify-center py-10 px-4">
             <Card className="w-full max-w-md border border-[#4a3d34] bg-[#1a2438] py-8 px-6">
                 <h1 className="text-center text-3xl font-bold text-[#b79c8d] mb-6">
                     Welcome Back

@@ -9,7 +9,7 @@ export default function CoursesPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://skillsphere-online-earning-platform.vercel.app/courses.json")
+    fetch("https://skillsphere-online-learning-platform.vercel.app/courses.json")
       .then((res) => res.json())
       .then((data) => {
         setCourses(data);

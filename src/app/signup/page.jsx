@@ -15,6 +15,7 @@ import {
 } from "@heroui/react";
 import { GrGoogle } from "react-icons/gr";
 import { authClient } from "@/lib/auth-client";
+import { toast } from "react-toastify";
 
 export default function SignUpPage() {
     const router = useRouter();
@@ -28,24 +29,38 @@ export default function SignUpPage() {
 
         console.log("Registration data:", { name, email, image, password });
 
-        const { data, error } = await authClient.signUp.email({
-            name,
-            email,
-            password,
-            image,
-        })
+        try {
+            const { data, error } = await authClient.signUp.email({
+                name,
+                email,
+                password,
+                image,
+            });
 
-        console.log({ data, error })
+            console.log({ data, error });
 
-        if (!error) {
-            router.push('/')
+            if (!error) {
+                toast.success("✅ Account created successfully! Redirecting...");
+                router.push('/');
+            } else {
+                toast.error(error.message || "Registration failed. Please try again.");
+            }
+        } catch (err) {
+            console.error("Unexpected error:", err);
+            toast.error("Something went wrong. Please try again later.");
         }
-        
     };
 
     const handleGoogleSignIn = async () => {
-        console.log("Google sign in clicked");
-        
+        try {
+            await authClient.signIn.social({
+                provider: "google",
+            });
+            toast.success("✅ Signed in with Google!");
+        } catch (err) {
+            console.error("Google sign-in error:", err);
+            toast.error("Google sign-in failed. Please try again.");
+        }
     };
 
     return (
