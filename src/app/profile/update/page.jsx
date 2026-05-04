@@ -99,7 +99,7 @@ export default function UpdateProfilePage() {
             <TextField isRequired name="image" type="text" defaultValue={user.image || ""}>
               <Label className="text-[#b79c8d]">Profile Image URL</Label>
               <Input
-                placeholder="https://example.com/avatar.jpg"
+                placeholder="Enter the URL of your profile image"
                 className="bg-[#4a3d34] text-[#b79c8d] border-[#8b756c] focus:border-[#b79c8d]"
               />
               <FieldError className="text-red-400" />

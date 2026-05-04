@@ -118,7 +118,7 @@ const Footer = () => {
             </p>
 
             <Link
-              href="/signup"
+              href="/"
               className="inline-flex items-center justify-center px-5 py-2.5 rounded-full 
               bg-[#4a3d34] text-[#b79c8d] hover:text-white
               text-sm font-medium transition-all duration-200 
@@ -129,10 +129,8 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider */}
         <div className="mt-12 h-px w-full bg-gradient-to-r from-transparent via-[#4a3d34] to-transparent" />
 
-        {/* Bottom */}
         <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#8b756c]">
           <p>© {new Date().getFullYear()} SkillSphere. All rights reserved.</p>
 

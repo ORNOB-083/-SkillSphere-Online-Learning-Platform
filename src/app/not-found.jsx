@@ -3,8 +3,7 @@ import Link from "next/link";
 
 const notFound = () => {
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen text-center px-4">
-            {/* Big 404 with lightest brand color */}
+        <div className="flex flex-col bg-[#3c94af] items-center justify-center min-h-screen text-center px-4">
             <h1 className="text-9xl font-black text-[#a98181]">404</h1>
 
             <p className="text-2xl font-bold tracking-tight text-[#312622] sm:text-4xl mt-4">
