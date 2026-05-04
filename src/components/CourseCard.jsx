@@ -12,6 +12,7 @@ const CourseCard = ({ course }) => {
           alt={course.title}
           fill
           className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <Chip className="absolute top-3 right-3 bg-[#1a2438]/80 text-[#b79c8d] backdrop-blur-sm">
           {course.category}

@@ -1,4 +1,3 @@
-// src/app/courses/page.jsx
 "use client";
 
 import { useEffect, useState } from "react";
@@ -10,7 +9,7 @@ export default function CoursesPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/courses.json")
+    fetch("https://skillsphere-online-earning-platform.vercel.app/courses.json")
       .then((res) => res.json())
       .then((data) => {
         setCourses(data);
